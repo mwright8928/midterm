@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Home</title>
+    <title>Members Area</title>
 
     <!-- Meta tags -->
     <meta name='description' content='Home page for software engineering midterm.' />
@@ -20,13 +20,13 @@
     <!-- Navbar -->
     <div class="container">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Welcome!</a>
+        <a class="navbar-brand" href="#">Restricted</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <li><a class="nav-item nav-link active" href="./midterm.php">Home <span class="sr-only">(current)</span></a><li>
+            <li><a class="nav-item nav-link" href="./midterm.php">Home <span class="sr-only">(current)</span></a><li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Log in
@@ -37,28 +37,22 @@
                   <a class="dropdown-item" href="./request.php">Request Access</a>
                 </div>
               </li>
-            <li><a class="nav-item nav-link disabled" href="./restricted.php">Members Area</a></li>
+            <li><a class="nav-item nav-link active" href="./restricted.php">Members Area</a></li>
           </div>
         </div>
       </nav>
 
-      <h1>Welcome</h1>
-      <?php
-        if(isset($_SESSION['username'])){
-          echo "<h3>Welcome, " . $_SESSION['username'] . "!</h3><br/>";
-        }
-        else{
-          echo"<h4>Please log in to view restricted content.</h4>";
-        }
-      ?>
-
+      <h1>Restricted</h1>
 
       <?php
         if(isset($_SESSION['username'])){
           //echo "<button onclick='logout()' id='myBtn' title='Logout'>Logout</button>";
           echo "<a href='./logout.php' class='btn btn-danger' role='button'>Logout</a>";
+        } else {
+          header("Location: ./midterm.php");
         }
       ?>
+
     </div>
 
     <!-- Footer -->
