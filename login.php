@@ -15,10 +15,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Link to boostrap css -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="midtermStyle.css">
   </head>
   <body>
-    <div class="container">
 
+    <div class="container">
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Login</a>
@@ -52,7 +53,7 @@
         setcookie('access', 1);
       ?>
 
-      <div class="container">
+      <div class="container" id="form">
         <form class="form-horizontal" action="authentication.php" method='post' id='login'>
             <div class="form-group">
                 <label for="userInput">Username:</label>
