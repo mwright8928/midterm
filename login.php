@@ -43,35 +43,39 @@
           </div>
         </div>
       </nav>
-
-      <h1>Please log in</h1>
-
-      <?php
-        if(isset($_COOKIE['access']) && $_COOKIE['access'] == -1)  {
-          echo "<p>" . "Invalid username and password combination!" . "<p>";
-        }
-        setcookie('access', 1);
-      ?>
-
-      <div class="container" id="form">
-        <form class="form-horizontal" action="authentication.php" method='post' id='login'>
-            <div class="form-group">
-                <label for="userInput">Username:</label>
-                <input type="username" class="form-control" id="user" name="username" placeholder="Enter your username" required autofocus>
-                <span id='userfeedback'></span>
-            </div>
-            <div class="form-group">
-                <label for="passInput">Password:</label>
-                <input type="password" class="form-control" id="pass" name="password" placeholder="Enter your password" required autofocus>
-                <span id='passwordfeedback'></span>
-            </div>
-            <div class="checkbox">
-                <label><input type="checkbox"> Remember me:</label>
-            </div>
-            <button type="submit" class="btn btn-primary" value="Login">Login</button>
-        </form>
-      </div>
     </div>
+
+    <div class="row">
+      <div class="column" id="outside"></div>
+        <div class="column" id="form">
+          <fieldset>
+            <legend class="legendOne">Login</legend>
+            <?php
+              if(isset($_COOKIE['access']) && $_COOKIE['access'] == -1)  {
+                echo "<p>" . "Invalid username and password combination!" . "<p>";
+              }
+              setcookie('access', 1);
+            ?>
+            <form class="form-horizontal" action="authentication.php" method='post' id='login'>
+                <div class="form-group">
+                    <label for="userInput">Username:</label>
+                    <input type="username" class="form-control" id="user" name="username" placeholder="Enter your username" required autofocus>
+                    <span id='userfeedback'></span>
+                </div>
+                <div class="form-group">
+                    <label for="passInput">Password:</label>
+                    <input type="password" class="form-control" id="pass" name="password" placeholder="Enter your password" required autofocus>
+                    <span id='passwordfeedback'></span>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox"> Remember me:</label>
+                </div>
+                <button type="submit" class="btn btn-primary" value="Login">Login</button>
+              </form>
+            </fieldset>
+          </div>
+        <div class="column" id="outside"></div>
+      </div>
 
     <?php
       if(isset($_SESSION['username'])){
@@ -87,7 +91,7 @@
       </div>
     </footer>
     <!-- Event listener script -->
-    <script src='./eventListeners.js'></script>
+    <script src='./requestScreening.js'></script>
     <!-- Bootstrap scripts -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

@@ -1,19 +1,16 @@
-// Select the DOM elements
-var elUsername = document.getElementById('user'); // form text input
-var elPassword = document.getElementById('pass'); // form text input
-var elTextarea = document.getElementById('comment'); // form text input
-var elUsernameMsg = document.getElementById('userfeedback'); // Text feedback on user name input
-var elPasswordMsg = document.getElementById('passwordfeedback')// Text feedback on password input
-var elTextareaMsg = document.getElementById('commentfeedback')// Text feedback on password input
+var elUsername = document.getElementById('user');
+var elPassword = document.getElementById('pass');
+var elUsernameMsg = document.getElementById('userfeedback');
+var elPasswordMsg = document.getElementById('passwordfeedback');
+var elTextareaMsg = document.getElementById('commentfeedback');
 
-// Functions to call
-function checkUsername(minlength) {   // Function with parameter, without event object passed
+function checkUsername(minlength) {   
   if(elUsername.value.length < minlength && elUsername.value.length > 0) {
-    elUsernameMsg.innerHTML = 'min ' + minlength.toString() + ' characters';
+    elUsernameMsg.innerHTML = minlength.toString() + ' character minumum';
   } else if (elUsername.value.length > minlength){
-    elUsernameMsg.innerHTML = 'Username: OK'; // OK message
+    elUsernameMsg.innerHTML = 'Username: OK';
   } else {
-    elUsernameMsg.innerHTML = ''; // Clear any previous error message
+    elUsernameMsg.innerHTML = '';
 
   }
 }
@@ -24,14 +21,11 @@ function checkPassword(e, minlength) {
   var number = false;
 
   if(elPassword.value.length < minlength && elPassword.value.length > 0) {
-    elPasswordMsg.innerHTML = 'min ' + minlength.toString() + ' characters';;
+    elPasswordMsg.innerHTML = minlength.toString() + ' character minimum';
   } else if (elPassword.value.length > minlength) {
-    // If Password is at least minlength characters long,
-    // check to make sure it has at least one upper case character
-    // and one number
     for(i = 0; i < elPassword.value.length; i++) {
       character = elPassword.value.charAt(i);
-      if (character == character.toUpperCase()) {
+      if (character == character.toUpperCase() && isNaN(character *1)) {
         upperCase = true;
       }
       if (!isNaN(character * 1)) {
@@ -39,16 +33,15 @@ function checkPassword(e, minlength) {
       }
     }
     if (upperCase == false || number == false) {
-      elPasswordMsg.innerHTML = '1 upper case, 1 number';
+      elPasswordMsg.innerHTML = 'Password must have at least 1 UPPER case character and one number';
     } else {
       elPasswordMsg.innerHTML = 'Password: OK';
     }
 
-  } else {  // Password field is clear
-    elPasswordMsg.innerHTML = ''; // Clear any previous error message
+  } else {
+    elPasswordMsg.innerHTML = '';
   }
 }
 
-// Add event listeners to the elements
 elUsername.addEventListener('blur', function() {checkUsername(7)}, false);
 elPassword.addEventListener('blur', function(e){checkPassword(e, 7)}, false);

@@ -18,8 +18,8 @@
     <link rel="stylesheet" type="text/css" href="midtermStyle.css">
   </head>
   <body>
+
     <div class="container">
-      <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Request access</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,36 +42,40 @@
           </div>
         </div>
       </nav>
-
-      <h1>Please enter your information</h1>
-
-      <div class="container" id="form">
-
-        <?php
-          if(isset($_COOKIE['usertaken']) && $_COOKIE['usertaken'] == 1)  {
-            echo "<p>" . "Username has already taken!" . "<br/>" . "Please enter a different username." . "<p>";
-          }
-          setcookie('usertaken', 0);
-        ?>
-
-        <form class="form-horizontal" action="addUser.php" method='post' id='login'>
-            <div class="form-group">
-                <label for="userInput">Username:</label>
-                <input type="username" class="form-control" id="user" name="username" placeholder="Enter a username" required autofocus>
-                <span id='userfeedback'></span>
-            </div>
-            <div class="form-group">
-                <label for="passInput">Password:</label>
-                <input type="password" class="form-control" id="pass" name="password" placeholder="Enter a password" required autofocus>
-                <span id='passwordfeedback'></span>
-            </div>
-            <div class="checkbox">
-                <label><input type="checkbox"> Remember me:</label>
-            </div>
-            <button type="submit" class="btn btn-primary" value="Request Access">Request access</button>
-        </form>
-      </div>
     </div>
+
+      <div class="row">
+        <div class="column" id="outside"></div>
+          <div class="column" id="form">
+            <fieldset>
+              <legend class="legendOne">Sign up</legend>
+              <?php
+                if(isset($_COOKIE['usertaken']) && $_COOKIE['usertaken'] == 1)  {
+                  echo "<p>" . "Username has already taken!" . "<br/>" . "Please enter a different username." . "<p>";
+                }
+                setcookie('usertaken', 0);
+              ?>
+
+              <form class="form-horizontal" action="addUser.php" method='post' id='login'>
+                  <div class="form-group">
+                      <label for="userInput">Username:</label>
+                      <input type="username" class="form-control" id="user" name="username" placeholder="Enter a username" required autofocus>
+                      <span id='userfeedback'></span>
+                  </div>
+                  <div class="form-group">
+                      <label for="passInput">Password:</label>
+                      <input type="password" class="form-control" id="pass" name="password" placeholder="Enter a password" required autofocus>
+                      <span id='passwordfeedback'></span>
+                  </div>
+                  <div class="checkbox">
+                      <label><input type="checkbox"> Remember me:</label>
+                  </div>
+                  <button type="submit" class="btn btn-primary" value="Request Access">Add me</button>
+              </form>
+            </fieldset>
+          </div>
+        <div class="column" id="outside"></div>
+      </div>
 
     <?php
       if(isset($_SESSION['username'])){

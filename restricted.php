@@ -15,6 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Link to boostrap css -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="midtermStyle.css">
   </head>
   <body>
     <!-- Navbar -->
@@ -43,7 +44,21 @@
       </nav>
 
       <h1>Restricted</h1>
-
+      <h2>Congradulations on becoming a member!</h2>
+      <p>Here you will find all of the member only content.<br/></p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultricies nulla a nibh
+        maximus bibendum. Aenean rutrum imperdiet luctus. In dapibus nisi ac
+        rutrum laoreet. Aenean aliquet sapien ornare turpis aliquam volutpat.
+        Pellentesque habitant morbi tristique senectus et netus et malesuada
+        fames ac turpis egestas. Quisque imperdiet, orci ac pretium bibendum,
+         urna eros suscipit mi, ac ornare ligula nisl a nunc. Sed vulputate
+         augue et ligula efficitur, nec porttitor tortor ornare. Vivamus et
+         ultricies enim. Curabitur vitae libero at sapien ullamcorper
+         ullamcorper. Ut ut sapien ac purus vulputate consequat non sed magna.
+          Nam sagittis justo auctor auctor malesuada. Suspendisse at mauris
+          quis augue tempus hendrerit vel vel nulla. Nulla viverra massa quis
+          enim iaculis luctus. Nunc tincidunt mi at sapien varius blandit.
+          Proin et efficitur nunc.</p>
       <?php
         if(isset($_SESSION['username'])){
           //echo "<button onclick='logout()' id='myBtn' title='Logout'>Logout</button>";
