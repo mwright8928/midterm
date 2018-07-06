@@ -20,3 +20,4 @@
     header("Location: ./login.php");
     setcookie("access", $accessGranted);
   }
+?>

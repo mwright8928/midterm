@@ -17,8 +17,6 @@ function checkUsername(minlength) {   // Function with parameter, without event 
 
   }
 }
-
-
 function checkPassword(e, minlength) {
   var i = 0;
   var character = '';
@@ -50,18 +48,7 @@ function checkPassword(e, minlength) {
     elPasswordMsg.innerHTML = ''; // Clear any previous error message
   }
 }
-function checkTextarea(maxlength) {   // Function with parameter, without event object passed
-  if(elTextarea.value.length > maxlength) {
-    elTextareaMsg.innerHTML = 'max ' + minlength.toString() + ' characters';
-  } else if (elTextarea.value.length < maxlength && elUsername.value.length > 0){
-    elTextareaMsg.innerHTML = 'OK'; // OK message
-  } else {
-    elTextareaMsg.innerHTML = ''; // Clear any previous error message
-
-  }
-}
 
 // Add event listeners to the elements
-elUsername.addEventListener('blur', function() {checkUsername(7)}, false);  // Blur event occurs when user click off this element
+elUsername.addEventListener('blur', function() {checkUsername(7)}, false);
 elPassword.addEventListener('blur', function(e){checkPassword(e, 7)}, false);
-elTextarea.addEventListener('blur', function() {checkTextarea(20)}, false);  // Blur event occurs when user click off this element
