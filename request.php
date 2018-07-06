@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Login</title>
+    <title>Request Access</title>
 
     <!-- Meta tags -->
     <meta name='description' content='Home page for software engineering midterm.' />
@@ -21,7 +21,7 @@
 
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Login</a>
+        <a class="navbar-brand" href="#">Request access</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -46,6 +46,14 @@
       <h1>Please enter your information</h1>
 
       <div class="container">
+
+        <?php
+          if(isset($_COOKIE['usertaken']) && $_COOKIE['usertaken'] == 1)  {
+            echo "<p>" . "Username has already taken!" . "<br/>" . "Please enter a different username." . "<p>";
+          }
+          setcookie('usertaken', 0);
+        ?>
+
         <form class="form-horizontal" action="addUser.php" method='post' id='login'>
             <div class="form-group">
                 <label for="userInput">Username:</label>
