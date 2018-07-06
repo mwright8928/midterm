@@ -4,7 +4,7 @@ var elUsernameMsg = document.getElementById('userfeedback');
 var elPasswordMsg = document.getElementById('passwordfeedback');
 var elTextareaMsg = document.getElementById('commentfeedback');
 
-function checkUsername(minlength) {   
+function checkUsername(minlength) {
   if(elUsername.value.length < minlength && elUsername.value.length > 0) {
     elUsernameMsg.innerHTML = minlength.toString() + ' character minumum';
   } else if (elUsername.value.length > minlength){
