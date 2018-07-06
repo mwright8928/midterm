@@ -68,7 +68,7 @@
             <div class="checkbox">
                 <label><input type="checkbox"> Remember me:</label>
             </div>
-            <button type="submit" class="btn btn-primary" value="Login">Login</button>
+            <button type="submit" class="btn btn-primary" value="Request Access">Request access</button>
         </form>
       </div>
     </div>
